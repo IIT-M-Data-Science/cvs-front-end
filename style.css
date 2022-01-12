@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Veitnam";
+  src: url(assets/fonts/BeVietnamPro-Regular.ttf);
+}
+
+body {
+  font-family: Veitnam;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-out;
+}
+
+.container {
+  width: 60%;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #7c251d;
+  border-radius: 1vw;
+}
+
+.left {
+  width: 30%;
+  background-color: #7c251d;
+  border-radius: 0.8vw;
+}
+
+.left-inner {
+  padding: 8rem 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  width: 70%;
+  background-color: #fff;
+}
+
+.right-inner {
+  padding: 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+.label {
+  margin: 0.3rem 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.verify-btn {
+  width: max-content;
+  padding: 0.5rem 3rem;
+  background-color: #d6a54e;
+  float: right;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 95%;
+    flex-flow: column;
+  }
+  .left, .right {
+    width: 100%;
+  }
+  .left-inner {
+    padding: 4rem 8rem;
+  }
+  .verify-btn {
+    float: none;
+  }
+}
