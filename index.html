@@ -6,7 +6,8 @@
     <meta name="title" content="Certificate Verification System" />
     <meta name="description" content="IIT Madras BSc Degree students certificate verification portal" />
     <title>IITMBSc Student Commmunity | Certificate Verification Portal</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
     <div class="container">
@@ -29,18 +30,20 @@
             />
             <p class="note">The Certificate ID can be found at the bottom of the certificate or from the URL from the QR code</p>
           </div>
-          <div class="verify-btn">Verify</div>
+          <div class="verify btn" onclick="verify()">Verify</div>
         </div>
       </div>
     </div>
     <div class="mask" style="display: none;">
-      <div class="alert box">
+      <div class="msg box" style="display: none;">
         <h1 class="msg-heading"></h1>
         <p class="msg"></p>
-        <div class="verify-btn" onclick="back()">OK</div>
+        <div class="btn" onclick="back()">OK</div>
       </div>
+      <iframe class="cert" src="template.html" style="display: none;"></iframe>
+      <p class="cert-x" style="display: none;" onclick="back()">&#10006</p>
     </div>
-    <script src="verify.js"></script>
-    <script src="msg.js"></script>
+    <script src="script/msg.js"></script>
+    <script src="script/verify.js"></script>
   </body>
 </html>
