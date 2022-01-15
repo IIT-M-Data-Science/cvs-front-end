@@ -1,55 +1,51 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
+    <meta name="description" content="IITM-POD Certificate Verification Portal">
+    <meta name="keywords" content="IITM, IITM POD, POD, CVS, Certificate, Verification">
+    <meta name="author" content="Dote, Noufal">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Certificate Verification System" />
-    <meta name="description" content="IIT Madras BSc Degree students certificate verification portal" />
-    <title>IITMBSc Student Commmunity | Certificate Verification Portal</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/main.css" />
+    <meta name="title" content="CVS Portal" />
+    <meta property="og:image"  content="https://verify.iitmbsc.org/assets/images/logo.png">
+    <title>Certificate Verification Portal - IITM B.Sc.</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="style/main.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf9Uw4eAAAAANq0h_FEmIV7ogYlvGn7WMJsGKsA"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="left">
-        <div class="left-inner">
-          <img src="assets/images/logo.png" alt="IITM BSc Students Logo">
-        </div>
-      </div>
-      <div class="right">
-        <div class="right-inner">
-          <h1 class="title">Verify your Certificate!</h1>
-          <div class="verify">
-            <p class="label">Certificate ID</p>
-            <input 
-              type="text" 
-              class="certid" 
-              placeholder="Enter Certificate ID" 
-              onfocus="this.placeholder='';document.querySelector('.label').style.color='#000'" 
-              onblur="this.placeholder='Enter Certificate ID';document.querySelector('.label').style.color='rgba(0,0,0,0.6)'" 
-            />
-            <p class="note">The Certificate ID can be found at the bottom of the certificate or from the URL from the QR code</p>
+    <main>
+        <div class="jumbotron d-flex align-items-center min-vh-100">
+            <div class="container">
+                <div class="d-flex cert-modal row m-3">
+                    <div class="col-md-4 float-md-start left-inner">
+                        <img src="assets/images/logo.png" alt="IITM BSc Students Logo" style="width: 100%;">
+                    </div>
+                    <div class="col-md-8 float-right right-inner d-flex align-items-center">
+                        <div class="pt-4 px-4">
+                            <h3 class="title">Verify your Certificate!</h3>
+                            <form>
+                                <div class="p-1 m-2">
+                                  <label for="cert-id" class="form-label">Certificate ID</label>
+                                  <input type="text" maxlength="22" class="form-control" id="cert-id" aria-describedby="cert-help" placeholder="Enter Certificate ID">
+                                  <div id="cert-help" class="form-text">The Certificate ID can be found at the bottom of the certificate or from the URL from the QR code.</div>
+                                </div>
+                                
+                                <p class="text-end pt-5"><button type="submit" class="btn btn-outline-dark col-3">Verify</button></p>
+                                
+                            </form>
+
+                            <p class="text-center pt-5">Made with ❤️ by <a href="https://github.com/valid22" style="color: #d6a54e">Dote</a>, Saranda house and <a href="https://noufal.me/" style="color: #d6a54e">Noufal Rahman</a>, Kaziranga house</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-          <div class="btn-placeholder">
-            <div class="verify btn" onclick="verify()">Verify</div>
-          </div>
-        </div>
-        <div class="footer desk">Made with ❤️ by <a href="https://github.com/valid22">Dote</a>, Saranda house and <a href="https://noufal.me">Noufal Rahman</a>, Kaziranga house</div>
-      </div>
-      <div class="footer mob">Made with ❤️ by <a href="https://github.com/valid22">Dote</a>, Saranda house and <a href="https://noufal.me">Noufal Rahman</a>, Kaziranga house</div>
-    </div>
-    <div class="mask" style="display: none;">
-      <div class="msg box" style="display: none;">
-        <h1 class="msg-heading"></h1>
-        <p class="msg"></p>
-        <div class="btn-placeholder">
-          <div class="btn" onclick="back()">OK</div>
-        </div>
-      </div>
-      <iframe class="cert" src="template.html" style="display: none;"></iframe>
-      <p class="cert-x" style="display: none;" onclick="back()">&#10006</p>
-    </div>
-    <script src="script/msg.js"></script>
-    <script src="script/verify.js"></script>
+       
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/verify.js"></script>
   </body>
 </html>
