@@ -93,7 +93,7 @@ function verify_certificate() {
 
 var alert_model = new bootstrap.Modal(document.getElementById('alert-modal'));
 var path = window.location.pathname.split("/")[1];
-var IITM_BSC_API = "http://localhost:8080/api/v1/";
+var IITM_BSC_API = "https://api.iitmbsc.org/api/v1/";
 var success_anime = anime.timeline({ autoplay: false, direction: 'normal', complete: function() {
     anime({
         targets: ['.cert-data'],
