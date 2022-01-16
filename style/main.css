@@ -40,12 +40,10 @@ body {
     display: flex;
     align-items: center;
     background-color: #7c251d;
-    border-radius: 0.8vw 0 0 0.8vw;
 }
 
 .right-inner {
     background-color: #fff;
-    border-radius: 1vw;
 }
 
 .title {
