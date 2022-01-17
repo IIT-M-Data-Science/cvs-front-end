@@ -69,8 +69,8 @@ function verify_certificate() {
     document.querySelectorAll(".inp-block").forEach( i => i.setAttribute("disabled", 1) );
     document.querySelector(".inp-block > .verify-spinner").style.visibility = "visible";
     cert_id = document.getElementById("cert-id").value.trim();
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6Lf9Uw4eAAAAANq0h_FEmIV7ogYlvGn7WMJsGKsA', {action: 'submit'}).then(function(token) {
+    grecaptcha.ready(() => {
+        grecaptcha.execute('6Lf9Uw4eAAAAANq0h_FEmIV7ogYlvGn7WMJsGKsA', {action: 'submit'}).then((token) => {
             axios.get(IITM_BSC_API + 'verify/' + cert_id, {
                 params: {
                     recaptcha: token    
@@ -90,7 +90,7 @@ var IITM_BSC_API = "https://api.iitmbsc.org/v1/";
 var success_anime = anime.timeline({
     autoplay: false, 
     direction: 'normal', 
-    complete: function() {
+    complete: () => {
         anime({
             targets: ['.cert-data'],
             easing: 'easeInOutQuad',
@@ -98,7 +98,7 @@ var success_anime = anime.timeline({
             opacity: ['0', '1'],
             autoplay: true,
             duration: 500,
-            begin: function() {
+            begin: () => {
                 document.querySelector('.cert-data').style.display = 'block';
             },
         });
@@ -123,4 +123,3 @@ var success_anime = anime.timeline({
 if (path) {
     document.getElementById("cert-id").value = path;
 }
-document.querySelector(".right").style.minHeight = document.querySelector(".right-inner").offsetHeight;
