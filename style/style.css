@@ -35,7 +35,7 @@ body {
 }
 
 .left-inner {
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   align-items: center;
 }
@@ -44,10 +44,14 @@ body {
   width: 70%;
   background-color: #fff;
   border-radius: 0 1vw 1vw 0;
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
 }
 
 .right-inner {
-  padding: 0 2rem;
+  padding: 2rem;
+  border-radius: 1vw;
 }
 
 img {
@@ -146,7 +150,7 @@ input {
     padding: 1rem;
   }
   .right-inner {
-    padding: 0 1.5rem;
+    padding: 1.5rem;
   }
 }
 
