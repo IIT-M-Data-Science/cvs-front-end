@@ -108,7 +108,7 @@ var success_anime = anime.timeline({
 }).add({
     targets: '.checkmark',
     scale: [{
-        value: [1, 1],
+        value: [0, 1],
         duration: 600,
         easing: 'easeOutQuad'
     }]
