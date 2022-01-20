@@ -34,17 +34,19 @@ function cert_verify_fail(r) {
 function animate_verify_success() {
     anime({
         targets: ['.verify-form'],
-        opacity: ['1', '0'],
+        opacity: [1, 0],
         easing: 'easeInOutSine',
         autoplay: true,
         // loop: false
         duration: 500,
         complete: () => {
+            document.querySelector('.right').style.width = document.querySelector('.right').offsetWidth;
+            document.querySelector('.cert-data').style.display = 'block';                 
             document.querySelector('.verify-form').style.display = 'none';
             anime({
                 targets: ['.verified-box'],
                 easing: 'easeInOutQuad',
-                opacity: '1',
+                opacity: [0, 1],
                 autoplay: true,
                 duration: 500,
                 complete: () => {
@@ -54,6 +56,9 @@ function animate_verify_success() {
                     document.querySelector('.verified-box').style.display = 'flex';
                 },
             });
+        },
+        begin: () => {
+            document.querySelector('.container').style.minWidth = (document.querySelector('.container').offsetWidth + 0) + "px";
         }
     }); 
 }
@@ -98,15 +103,12 @@ var success_anime = anime.timeline({
             opacity: ['0', '1'],
             autoplay: true,
             duration: 500,
-            begin: () => {
-                document.querySelector('.cert-data').style.display = 'block';
-            },
         });
     }
 }).add({
     targets: '.checkmark',
     scale: [{
-        value: [0, 1],
+        value: [1, 1],
         duration: 600,
         easing: 'easeOutQuad'
     }]
